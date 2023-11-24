@@ -53,6 +53,7 @@ function ListPlayer() {
       const response = await axios.get("http://localhost:5010/audio");
       console.log({ data: response.data.result });
       setTracks(mapRecords(response.data.result));
+      setMyData(response.data.result)
     } catch (e) {
       console.error(e);
       return;
@@ -92,6 +93,7 @@ function ListPlayer() {
     setIsReload(false);
   }, [isReload]);
 
+
   console.log({ tracks });
   return (
     <>
@@ -106,6 +108,8 @@ function ListPlayer() {
       </div>
     </>
   );
+  
+  
 }
 
 export default ListPlayer;
