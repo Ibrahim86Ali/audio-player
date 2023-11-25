@@ -1,8 +1,13 @@
-import "./styles/App.css";
-import ListPlayer from "./components/ListPlayer.jsx";
+import Category from "../Component/Category/Category";
+import Soundlist from "./Components/SoundList";
 
-function App() {
-  return <ListPlayer></ListPlayer>;
-}
+const App = () => {
+  return (
+    <>
+      <Category />
+      <Soundlist />
+    </>
+  );
+};
 
 export default App;
