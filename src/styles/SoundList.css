@@ -2,8 +2,8 @@
   font-family: Monstserrat, serif;
   color: #16139b;
   position: absolute;
-  top: 0.9rem;
-  left: 3.9rem;
+  top: 11.9rem;
+  left: 12.9rem;
 }
 
 .title {
@@ -12,7 +12,7 @@
   font-weight: 600;
   size: 14px;
   position: relative;
-  left: 3.4rem;
+  left: 21.9rem;
   top: -1.3rem;
 }
 Span {
@@ -21,6 +21,6 @@ Span {
   size: 14px;
   padding: 1px;
   position: relative;
-  left: 5.4rem;
+  left: 26.9rem;
   top: -2.3rem;
 }

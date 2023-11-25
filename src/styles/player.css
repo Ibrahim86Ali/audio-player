@@ -15,8 +15,6 @@
   font-family: monospace;
   font-size: 16px;
   cursor: pointer;
-  position: relative;
-  left: 11px;
 }
 
 .forwardBackward:hover {
@@ -34,8 +32,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  left: 10px;
 }
 
 .play {
@@ -47,9 +43,6 @@
 .duration {
   font-family: monospace;
   font-size: 16px;
-  position: relative;
-  bottom: -60px;
-  left: -170px;
 }
 
 .currentTime {
@@ -67,8 +60,6 @@
   background: var(--bar-bg);
   border-radius: 10px;
   position: relative;
-  bottom: -60px;
-  left: -170px;
   width: 100%;
   height: 11px;
   outline: none;
@@ -100,7 +91,7 @@
 
 /* progress bar - chrome and safari */
 .progressBar::before {
-  content: "";
+  content: '';
   height: 11px;
   width: var(--seek-before-width);
   background-color: var(--seek-before-color);
