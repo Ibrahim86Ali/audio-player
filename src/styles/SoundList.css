@@ -3,7 +3,7 @@
   color: #16139b;
   position: absolute;
   top: 0.9rem;
-  left: 2.9rem;
+  left: 3.9rem;
 }
 
 .title {
@@ -12,7 +12,7 @@
   font-weight: 600;
   size: 14px;
   position: relative;
-  left: 4.9rem;
+  left: 3.4rem;
   top: -1.3rem;
 }
 Span {
@@ -21,6 +21,6 @@ Span {
   size: 14px;
   padding: 1px;
   position: relative;
-  left: 4.9rem;
+  left: 5.4rem;
   top: -2.3rem;
 }
