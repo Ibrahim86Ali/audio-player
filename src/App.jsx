@@ -6,16 +6,27 @@ import SearchBar from './components/SearchBar.jsx';
 import axios from 'axios';
 
 export default function App() {
-  const [records, setRecords] = useState([]);
   const [tracks, setTracks] = useState([]);
   const [track, setTrack] = useState(null);
+  const [category, setCategory] = useState(null);
+  const [title, setTitle] = useState(null);
 
-  const fetchRecords = async () => {
+  const fetchTracks = async () => {
+    let params = {};
+    if (category) {
+      params = { filterBy: category };
+    }
+
+    if (title) {
+      params = { pattern: title };
+    }
+
     try {
-      const response = await axios.get('http://localhost:5010/audio');
+      const response = await axios.get('http://localhost:5010/audio', {
+        params,
+      });
       const data = response.data.result;
 
-      setRecords(data);
       setTracks([...data]);
     } catch (error) {
       console.error('Error fetching records:', error);
@@ -24,13 +35,12 @@ export default function App() {
   };
 
   useEffect(() => {
-    fetchRecords();
-  }, []);
-
+    fetchTracks();
+  }, [category]);
   return (
     <>
       <SearchBar />
-      <Category records={records} setTracks={setTracks} />
+      <Category setCategory={setCategory} />
       <SoundList tracks={tracks} setTrack={(track) => setTrack(track)} />
       <AudioPlayer track={track} />
     </>
