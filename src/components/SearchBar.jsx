@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
-const SearchBar = () => {
-  const [soundList, setSoundList] = useState([]);
-  const [input, setInput] = useState("");
+export default function SearchBar({ setTitle }) {
+  const [input, setInput] = useState(null);
+
+  useEffect(() => {
+    setTitle(input);
+  }, [input]);
 
   return (
     <div className="input">
@@ -14,23 +18,9 @@ const SearchBar = () => {
           setInput(e.target.value);
         }}
       />
-      {/* {input.length > 0 && (
-        <div>
-          {soundList
-            .filter((item) =>
-              item.title.toLowerCase().includes(input.toLowerCase())
-            )
-            .map((item) => (
-              <div className="audio-container" key={item.id}>
-                <h2>{item.title}</h2>
-                <h2>{item.genre}</h2>
-                <img src={item.thumbnail} alt={`${item.title} thumbnail`} />
-              </div>
-            ))}
-        </div>
-      )} */}
     </div>
   );
+}
+SearchBar.propTypes = {
+  setTitle: PropTypes.func.isRequired,
 };
-
-export default SearchBar;

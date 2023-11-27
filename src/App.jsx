@@ -12,13 +12,13 @@ export default function App() {
   const [title, setTitle] = useState(null);
 
   const fetchTracks = async () => {
-    let params = {};
+    const params = {};
     if (category) {
-      params = { filterBy: category };
+      params.filterBy = category;
     }
 
     if (title) {
-      params = { pattern: title };
+      params.pattern = title;
     }
 
     try {
@@ -26,6 +26,7 @@ export default function App() {
         params,
       });
       const data = response.data.result;
+      response.request;
 
       setTracks([...data]);
     } catch (error) {
@@ -36,10 +37,11 @@ export default function App() {
 
   useEffect(() => {
     fetchTracks();
-  }, [category]);
+  }, [category, title]);
+
   return (
     <>
-      <SearchBar />
+      <SearchBar setTitle={setTitle} />
       <Category setCategory={setCategory} />
       <SoundList tracks={tracks} setTrack={(track) => setTrack(track)} />
       <AudioPlayer track={track} />
