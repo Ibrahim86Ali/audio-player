@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Category from "./components/category/Category.jsx";
 import SoundList from "./components/SoundList.jsx";
 import AudioPlayer from "./components/AudioPlayer.jsx";
-import NavigationBar from "./components/NavigationBar.jsx";
 import axios from "axios";
 
 export default function App() {
@@ -32,7 +31,6 @@ export default function App() {
       <Category records={records} setTracks={setTracks} />
       <SoundList tracks={tracks} setTrack={(track) => setTrack(track)} />
       <AudioPlayer track={track} />
-      {/* <NavigationBar /> */}
     </>
   );
 }
